@@ -1,0 +1,83 @@
+(reset)
+(set-option :print-success false)
+(set-info :smt-lib-version 2.0)
+(set-info :status unsat)
+(set-option :AUTO_CONFIG false)
+(set-option :pp.bv_literals false)
+(set-option :MODEL.V2 true)
+(set-option :smt.PHASE_SELECTION 0)
+(set-option :smt.RESTART_STRATEGY 0)
+(set-option :smt.RESTART_FACTOR |1.5|)
+(set-option :smt.ARITH.RANDOM_INITIAL_VALUE true)
+(set-option :smt.CASE_SPLIT 3)
+(set-option :smt.DELAY_UNITS true)
+(set-option :NNF.SK_HACK true)
+(set-option :smt.MBQI false)
+(set-option :smt.QI.EAGER_THRESHOLD 100)
+(set-option :TYPE_CHECK true)
+(set-option :smt.BV.REFLECT true)
+; done setting options
+
+
+(declare-fun tickleBool (Bool) Bool)
+(assert (and (tickleBool true) (tickleBool false)))
+(declare-fun %lbl%+370 () Bool)
+(declare-fun %lbl%@863 () Bool)
+(declare-fun bad@0 () Bool)
+(declare-fun i@2 () Int)
+(declare-fun j@2 () Int)
+(declare-fun n () Int)
+(declare-fun %lbl%@892 () Bool)
+(declare-fun a@2 () (Array Int Bool))
+(declare-fun %lbl%@920 () Bool)
+(declare-fun %lbl%+234 () Bool)
+(declare-fun a () (Array Int Bool))
+(declare-fun j () Int)
+(declare-fun t@0 () Bool)
+(declare-fun i () Int)
+(declare-fun a@0 () (Array Int Bool))
+(declare-fun a@1 () (Array Int Bool))
+(declare-fun i@1 () Int)
+(declare-fun j@1 () Int)
+(declare-fun %lbl%+232 () Bool)
+(declare-fun j@0 () Int)
+(declare-fun %lbl%+230 () Bool)
+(declare-fun %lbl%+221 () Bool)
+(declare-fun i@0 () Int)
+(declare-fun %lbl%+213 () Bool)
+(declare-fun bad () Bool)
+(declare-fun %lbl%+211 () Bool)
+(declare-fun %lbl%+375 () Bool)
+(push 1)
+(set-info :boogie-vc-id main)
+(assert (not
+(let ((GeneratedUnifiedExit_correct  (=> (! (and %lbl%+370 true) :lblpos +370) (and (! (or %lbl%@863  (or bad@0 (and (and (<= 0 i@2) (<= i@2 (+ j@2 1))) (<= (+ j@2 1) n)))) :lblneg @863) (=> (or bad@0 (and (and (<= 0 i@2) (<= i@2 (+ j@2 1))) (<= (+ j@2 1) n))) (and (! (or %lbl%@892  (or bad@0 (forall ((m Int) ) (!  (=> (and (<= 0 m) (< m i@2)) (not (select a@2 m)))
+ :qid |twowayso.16:26|
+ :skolemid |2|
+)))) :lblneg @892) (=> (or bad@0 (forall ((m@@0 Int) ) (!  (=> (and (<= 0 m@@0) (< m@@0 i@2)) (not (select a@2 m@@0)))
+ :qid |twowayso.16:26|
+ :skolemid |2|
+))) (! (or %lbl%@920  (or bad@0 (forall ((k Int) ) (!  (=> (and (< j@2 k) (< k n)) (select a@2 k))
+ :qid |twowayso.17:26|
+ :skolemid |3|
+)))) :lblneg @920))))))))
+(let ((anon8_Else_correct  (=> (! (and %lbl%+234 true) :lblpos +234) (=> (not (select a j)) (=> (and (and (and (and (=> t@0 (select a i)) (=> (select a i) t@0)) (= a@0 (store a i (select a j)))) (and (= a@1 (store a@0 j t@0)) (= i@1 (+ i 1)))) (and (and (= j@1 (- j 1)) (= a@2 a@1)) (and (= i@2 i@1) (= j@2 j@1)))) GeneratedUnifiedExit_correct)))))
+(let ((anon8_Then_correct  (=> (! (and %lbl%+232 true) :lblpos +232) (=> (select a j) (=> (and (and (= j@0 (- j 1)) (= a@2 a)) (and (= i@2 i) (= j@2 j@0))) GeneratedUnifiedExit_correct)))))
+(let ((anon7_Else_correct  (=> (! (and %lbl%+230 true) :lblpos +230) (=> (select a i) (and anon8_Then_correct anon8_Else_correct)))))
+(let ((anon7_Then_correct  (=> (! (and %lbl%+221 true) :lblpos +221) (=> (not (select a i)) (=> (and (and (= i@0 (+ i 1)) (= a@2 a)) (and (= i@2 i@0) (= j@2 j))) GeneratedUnifiedExit_correct)))))
+(let ((anon6_Else_correct  (=> (! (and %lbl%+213 true) :lblpos +213) (=> (<= i j) (=> (and (=> bad@0 bad) (=> bad bad@0)) (and anon7_Then_correct anon7_Else_correct))))))
+(let ((anon6_Then_correct  (=> (! (and %lbl%+211 true) :lblpos +211) (=> (not (<= i j)) (=> (and (=> bad@0 true) (=> true bad@0)) (and anon7_Then_correct anon7_Else_correct))))))
+(let ((anon0_correct  (=> (! (and %lbl%+375 true) :lblpos +375) (=> (> n 0) (=> (and (and (and (<= 0 i) (<= i (+ j 1))) (<= (+ j 1) n)) (and (forall ((m@@1 Int) ) (!  (=> (and (<= 0 m@@1) (< m@@1 i)) (not (select a m@@1)))
+ :qid |twowayso.12:20|
+ :skolemid |0|
+)) (forall ((k@@0 Int) ) (!  (=> (and (< j k@@0) (< k@@0 n)) (select a k@@0))
+ :qid |twowayso.13:20|
+ :skolemid |1|
+)))) (and anon6_Then_correct anon6_Else_correct))))))
+anon0_correct))))))))
+))
+(get-info :name)
+(check-sat)
+(get-info :name)
+(pop 1)
+; Valid
