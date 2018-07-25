@@ -1,0 +1,7 @@
+%Status: Theorem
+%Taken from Benzmuller's paper on hiugher-order resolution
+%For many calculi problem requires extensionality to reason about
+
+thf(a, type, a: $o).
+thf(a, type, b: $o).
+thf(a, conjecture, ![O : $o > $o] : (((O @ a) & (O @ b)) => (O @ (a & b)))).
