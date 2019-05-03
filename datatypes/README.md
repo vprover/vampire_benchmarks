@@ -10,8 +10,9 @@
 All problems are unsat by construction, but not all have been
 successfully verified by Vampire so far.
 
-Options -tar and -tac are relevant for these problems.
+Options ```-tar```, ```-tac``` and ```-tau``` are relevant for these
+problems.
 
 Tested with commit ```4044``` of branch ```master```, but some
-problems in ```cyclic_values``` rely on feature found in branch
+problems in ```cyclic_values``` rely on features found in branch
 ```codatatypes```.
