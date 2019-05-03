@@ -1,0 +1,15 @@
+(set-info :status unsat)
+(declare-codatatypes ((T 0)) ((
+  (f0)
+  (f1 (proj0f1 T)))))
+(assert (exists ((y249 T) (y248 T) (y261 T) (y242 T) (y267 T) (y266 T) (y258 T) (y264 T) (y241 T) (y240 T) (y243 T) (y255 T) (y262 T) (y244 T) (y250 T) (y253 T) (y276 T) (y260 T) (y238 T) (y247 T) (y274 T) (y269 T) (y275 T) (y265 T) (y252 T) (y277 T) (y279 T) (y278 T) (y257 T) (y273 T) (y268 T) (y271 T) (y254 T) (y239 T)) (forall ((x286 T) (x287 T) (x284 T) (x285 T) (x282 T) (x283 T) (x280 T) (x281 T) (x288 T) (x289 T)) 
+  (or 
+    (and (= y238 (f1 x286)) (= y239 (f1 y240)) (= y240 (f1 y241)) (= y241 (f1 y242)) (= y242 (f1 y243)) (= y243 (f1 y239)) (distinct y238 y239)) 
+    (and (= y244 (f1 y244)) (= x289 (f1 x289)) (distinct y244 x289)) 
+    (and (= x287 (f1 (f1 (f1 y248)))) (= y248 (f1 x287)) (= y247 (f1 y249)) (= y249 (f1 y250)) (= y250 (f1 x283)) (= x283 (f1 y247)) (distinct x287 y247)) 
+    (and (= y252 (f1 y254)) (= y254 (f1 y255)) (= y255 (f1 x285)) (= x285 (f1 y252)) (= y253 (f1 y257)) (= y257 (f1 y258)) (= y258 (f1 x281)) (= x281 (f1 y253)) (distinct y252 y253)) 
+    (and (= y260 (f1 y262)) (= y262 (f1 x288)) (= x288 (f1 y264)) (= y264 (f1 y260)) (= y261 (f1 y265)) (= y265 (f1 y266)) (= y266 (f1 y267)) (= y267 (f1 y261)) (distinct y260 y261)) 
+    (and (= y268 (f1 y268)) (= y269 (f1 y269)) (distinct y268 y269)) 
+    (and (= x284 (f1 x282)) (= x282 (f1 x284)) (= y271 (f1 y273)) (= y273 (f1 y271)) (distinct x284 y271)) 
+    (and (= y274 x280) (= y276 (f1 y277)) (= y277 (f1 y274)) (= y275 (f1 y278)) (= y278 (f1 y279)) (= y279 (f1 y275)) (distinct y274 y275))))))
+(check-sat)

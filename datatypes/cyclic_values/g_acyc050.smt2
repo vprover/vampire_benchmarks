@@ -1,0 +1,15 @@
+(set-info :status unsat)
+(declare-datatypes ((T 0)) ((
+  (f0)
+  (f1 (proj0f1 T) (proj1f1 T))
+  (f2 (proj0f2 T) (proj1f2 T)))))
+(assert (exists ((y5229 T) (y5228 T) (y5223 T) (y5227 T) (y5226 T) (y5225 T) (y5224 T) (y5234 T) (y5235 T) (y5236 T) (y5237 T) (y5230 T) (y5231 T) (y5232 T) (y5233 T) (y5238 T) (y5239 T)) 
+  (or 
+    (and (= y5223 (f2 y5224 PLACEHOLDER)) (= y5224 (f1 y5223 PLACEHOLDER))) 
+    (and (= y5225 (f1 y5226 (f2 PLACEHOLDER PLACEHOLDER))) (= y5226 (f2 y5227 PLACEHOLDER)) (= y5227 (f2 y5225 PLACEHOLDER))) 
+    (and (= y5228 (f1 y5229 (f2 (f2 PLACEHOLDER PLACEHOLDER) (f2 PLACEHOLDER PLACEHOLDER)))) (= y5229 (f1 y5230 (f2 PLACEHOLDER PLACEHOLDER))) (= y5230 (f1 y5228 PLACEHOLDER))) 
+    (and (= y5231 (f1 (f1 y5232 (f1 PLACEHOLDER PLACEHOLDER)) (f1 PLACEHOLDER PLACEHOLDER))) (= y5232 (f2 y5231 PLACEHOLDER))) 
+    (and (= y5233 (f1 y5234 (f2 PLACEHOLDER PLACEHOLDER))) (= y5234 (f1 y5233 PLACEHOLDER))) 
+    (and (= y5235 (f2 y5236 (f1 PLACEHOLDER PLACEHOLDER))) (= y5236 (f1 y5235 PLACEHOLDER))) 
+    (and (= y5237 (f2 y5238 PLACEHOLDER)) (= y5238 (f2 y5239 (f2 PLACEHOLDER PLACEHOLDER))) (= y5239 (f1 y5237 PLACEHOLDER))))))
+(check-sat)

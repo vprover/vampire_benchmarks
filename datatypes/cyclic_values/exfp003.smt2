@@ -1,0 +1,10 @@
+(set-info :status unsat)
+(declare-codatatypes ((T 0)) ((
+  (f0)
+  (f1 (proj0f1 T) (proj1f1 T) (proj2f1 T))
+  (f2 (proj0f2 T))
+  (f3 (proj0f3 T) (proj1f3 T) (proj2f3 T))
+  (f4 (proj0f4 T)))))
+(assert (forall ((x343 T) (x342 T) (x344 T)) 
+  (or (distinct x342 (f2 x343)) (distinct x343 (f2 x344)) (distinct x344 (f2 x342)))))
+(check-sat)

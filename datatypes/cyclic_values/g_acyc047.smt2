@@ -1,0 +1,15 @@
+(set-info :status unsat)
+(declare-datatypes ((T 0)) ((
+  (f0)
+  (f1 (proj0f1 T) (proj1f1 T))
+  (f2 (proj0f2 T))
+  (f3 (proj0f3 T) (proj1f3 T)))))
+(assert (exists ((y4860 T) (y4866 T) (y4867 T) (y4864 T) (y4861 T) (y4865 T) (y4862 T) (y4882 T) (y4863 T) (y4880 T) (y4881 T) (y4859 T) (y4879 T) (y4878 T) (y4868 T) (y4869 T) (y4875 T) (y4874 T) (y4877 T) (y4876 T) (y4871 T) (y4870 T) (y4873 T) (y4872 T)) 
+  (or 
+    (and (= y4859 (f1 y4860 (f1 PLACEHOLDER (f1 (f2 PLACEHOLDER) (f1 PLACEHOLDER PLACEHOLDER))))) (= y4860 (f2 y4861)) (= y4861 (f1 y4862 (f3 PLACEHOLDER PLACEHOLDER))) (= y4862 (f3 y4859 PLACEHOLDER))) (= y4863 (f1 (f2 (f3 (f3 (f2 y4863) PLACEHOLDER) (f2 PLACEHOLDER))) (f1 (f2 (f3 PLACEHOLDER PLACEHOLDER)) PLACEHOLDER))) 
+    (and (= y4864 (f2 (f2 y4865))) (= y4865 (f2 y4866)) (= y4866 (f2 y4864))) 
+    (and (= y4867 (f1 y4868 PLACEHOLDER)) (= y4868 (f2 y4869)) (= y4869 (f1 y4870 (f1 (f1 PLACEHOLDER PLACEHOLDER) (f2 PLACEHOLDER)))) (= y4870 (f1 y4871 (f1 PLACEHOLDER PLACEHOLDER))) (= y4871 (f2 y4867))) (= y4872 (f2 y4872)) 
+    (and (= y4873 (f3 y4874 (f2 PLACEHOLDER))) (= y4874 (f1 y4873 PLACEHOLDER))) 
+    (and (= y4875 (f3 (f2 y4876) (f3 PLACEHOLDER (f2 PLACEHOLDER)))) (= y4876 (f2 y4877)) (= y4877 (f1 y4875 PLACEHOLDER))) (= y4878 (f3 y4878 PLACEHOLDER)) 
+    (and (= y4879 (f1 y4880 (f1 PLACEHOLDER (f3 (f2 PLACEHOLDER) (f2 PLACEHOLDER))))) (= y4880 (f2 y4881)) (= y4881 (f1 y4882 (f1 PLACEHOLDER PLACEHOLDER))) (= y4882 (f2 y4879))))))
+(check-sat)

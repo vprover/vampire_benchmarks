@@ -1,0 +1,11 @@
+(set-info :status unsat)
+(declare-datatypes ((T 0)) ((
+  (f0)
+  (f1 (proj0f1 T) (proj1f1 T) (proj2f1 T))
+  (f2 (proj0f2 T) (proj1f2 T))
+  (f3 (proj0f3 T) (proj1f3 T)))))
+(assert (exists ((y6244 T) (y6245 T) (y6246 T) (y6247 T) (y6240 T) (y6241 T) (y6242 T) (y6243 T)) 
+  (or (= y6240 (f1 y6240 y6240 PLACEHOLDER)) (= y6241 (f1 y6241 PLACEHOLDER PLACEHOLDER)) 
+    (and (= y6242 (f3 y6243 PLACEHOLDER)) (= y6243 (f3 y6242 PLACEHOLDER))) 
+    (and (= y6244 (f1 (f1 y6244 PLACEHOLDER PLACEHOLDER) y6245 (f1 PLACEHOLDER PLACEHOLDER PLACEHOLDER))) (= y6245 (f1 y6244 PLACEHOLDER PLACEHOLDER))) (= y6246 (f2 y6246 PLACEHOLDER)) (= y6247 (f2 (f2 (f1 (f2 y6247 PLACEHOLDER) y6247 (f3 PLACEHOLDER PLACEHOLDER)) PLACEHOLDER) (f2 PLACEHOLDER PLACEHOLDER))))))
+(check-sat)

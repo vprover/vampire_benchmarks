@@ -1,0 +1,15 @@
+(set-info :status unsat)
+(declare-datatypes ((T 0)) ((
+  (f0)
+  (f1 (proj0f1 T))
+  (f2 (proj0f2 T) (proj1f2 T) (proj2f2 T) (proj3f2 T))
+  (f3 (proj0f3 T) (proj1f3 T))
+  (f4 (proj0f4 T) (proj1f4 T)))))
+(assert (exists ((y1946 T) (y1947 T) (y1955 T) (y1945 T) (y1951 T) (y1950 T) (y1953 T) (y1952 T) (y1958 T) (y1960 T) (y1959 T) (y1957 T) (y1948 T) (y1949 T) (y1956 T) (y1954 T)) 
+  (or 
+    (and (= y1945 (f4 y1946 (f2 PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER))) (= y1946 (f1 y1947)) (= y1947 (f4 y1945 PLACEHOLDER))) 
+    (and (= y1948 (f1 y1949)) (= y1949 (f4 y1950 (f3 PLACEHOLDER (f4 PLACEHOLDER PLACEHOLDER)))) (= y1950 (f2 y1951 PLACEHOLDER PLACEHOLDER (f1 (f1 PLACEHOLDER)))) (= y1951 (f1 y1952)) (= y1952 (f1 y1948))) 
+    (and (= y1953 (f3 y1954 (f3 PLACEHOLDER PLACEHOLDER))) (= y1954 (f1 y1955)) (= y1955 (f1 y1953))) 
+    (and (= y1956 (f3 y1957 (f3 PLACEHOLDER PLACEHOLDER))) (= y1957 (f1 y1958)) (= y1958 (f3 y1956 PLACEHOLDER))) 
+    (and (= y1959 (f1 (f4 y1960 PLACEHOLDER))) (= y1960 (f4 y1959 PLACEHOLDER))))))
+(check-sat)

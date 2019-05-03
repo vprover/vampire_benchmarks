@@ -1,0 +1,10 @@
+(set-info :status unsat)
+(declare-datatypes ((T 0)) ((
+  (f0)
+  (f1 (proj0f1 T)))))
+(assert (exists ((y8783 T) (y8787 T) (y8786 T) (y8785 T) (y8784 T) (y8789 T) (y8788 T) (y8790 T) (y8791 T) (y8792 T) (y8793 T)) 
+  (or (= y8783 (f1 y8783)) 
+    (and (= y8784 (f1 y8785)) (= y8785 (f1 y8786)) (= y8786 (f1 y8787)) (= y8787 (f1 y8784))) 
+    (and (= y8788 (f1 (f1 y8789))) (= y8789 (f1 y8790)) (= y8790 (f1 y8788))) 
+    (and (= y8791 (f1 (f1 (f1 (f1 y8792))))) (= y8792 (f1 y8791))) (= y8793 (f1 y8793)))))
+(check-sat)

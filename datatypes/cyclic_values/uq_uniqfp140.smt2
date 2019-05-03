@@ -1,0 +1,15 @@
+(set-info :status unsat)
+(declare-codatatypes ((T 0)) ((
+  (f0)
+  (f1 (proj0f1 T))
+  (f2 (proj0f2 T) (proj1f2 T) (proj2f2 T)))))
+(assert (exists ((y15071 T) (y15082 T) (y15068 T) (y15076 T) (y15044 T) (y15077 T) (y15054 T) (y15055 T) (y15056 T) (y15057 T) (y15047 T) (y15046 T) (y15045 T) (y15053 T) (y15048 T) (y15058 T) (y15059 T) (y15043 T) (y15078 T) (y15079 T) (y15080 T) (y15042 T) (y15061 T) (y15060 T) (y15063 T) (y15062 T) (y15065 T) (y15041 T) (y15074 T) (y15075 T) (y15072 T) (y15073 T) (y15070 T) (y15051 T)) (forall ((x15084 T) (x15092 T) (x15086 T) (x15090 T) (x15085 T) (x15083 T) (x15088 T) (x15091 T) (x15089 T)) 
+  (or 
+    (and (= y15041 (f1 y15043)) (= y15043 (f1 y15044)) (= y15044 (f1 y15041)) (= y15042 (f1 y15045)) (= y15045 (f1 y15046)) (= y15046 (f1 y15042)) (distinct y15041 y15042)) 
+    (and (= y15047 (f2 x15089 PLACEHOLDER (f2 PLACEHOLDER PLACEHOLDER PLACEHOLDER))) (= x15089 (f1 y15047)) (= y15048 (f2 x15086 PLACEHOLDER (f2 PLACEHOLDER PLACEHOLDER PLACEHOLDER))) (= x15086 (f1 y15048)) (distinct y15047 y15048)) 
+    (and (= y15051 (f1 y15053)) (= y15053 (f1 y15054)) (= y15054 x15092) (= x15090 (f1 y15055)) (= y15055 (f1 y15056)) (= y15056 (f1 x15090)) (distinct y15051 x15090)) 
+    (and (= y15057 (f1 y15059)) (= y15059 (f2 y15060 PLACEHOLDER (f1 PLACEHOLDER))) (= y15060 (f1 y15061)) (= y15061 (f2 y15057 PLACEHOLDER PLACEHOLDER)) (= y15058 (f1 y15062)) (= y15062 (f2 y15063 PLACEHOLDER (f1 PLACEHOLDER))) (= y15063 (f1 x15091)) (= x15091 (f2 y15058 PLACEHOLDER PLACEHOLDER)) (distinct y15057 y15058)) 
+    (and (= y15065 (f1 x15085)) (= x15085 (f1 y15068)) (= y15068 (f1 x15083)) (= x15083 (f1 y15065)) (= x15088 (f1 y15070)) (= y15070 (f1 y15071)) (= y15071 (f1 y15072)) (= y15072 (f1 x15088)) (distinct y15065 x15088)) 
+    (and (= y15073 (f1 y15075)) (= y15075 (f1 y15076)) (= y15076 (f1 y15073)) (= y15074 (f1 y15077)) (= y15077 (f1 y15078)) (= y15078 (f1 y15074)) (distinct y15073 y15074)) 
+    (and (= y15079 (f1 x15084)) (= x15084 (f1 y15079)) (= y15080 (f1 y15082)) (= y15082 (f1 y15080)) (distinct y15079 y15080))))))
+(check-sat)

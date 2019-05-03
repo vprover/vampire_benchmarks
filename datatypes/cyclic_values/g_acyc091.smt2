@@ -1,0 +1,17 @@
+(set-info :status unsat)
+(declare-datatypes ((T 0)) ((
+  (f0)
+  (f1 (proj0f1 T))
+  (f2 (proj0f2 T) (proj1f2 T)))))
+(assert (exists ((y9623 T) (y9637 T) (y9622 T) (y9645 T) (y9621 T) (y9644 T) (y9642 T) (y9620 T) (y9632 T) (y9638 T) (y9633 T) (y9639 T) (y9616 T) (y9617 T) (y9614 T) (y9615 T) (y9627 T) (y9626 T) (y9625 T) (y9624 T) (y9634 T) (y9635 T) (y9629 T) (y9628 T) (y9630 T) (y9631 T) (y9618 T) (y9619 T) (y9641 T) (y9643 T) (y9640 T) (y9636 T)) 
+  (or 
+    (and (= y9614 (f1 y9615)) (= y9615 (f1 y9614))) 
+    (and (= y9616 (f1 y9617)) (= y9617 (f2 y9618 (f2 PLACEHOLDER PLACEHOLDER))) (= y9618 (f1 y9619)) (= y9619 (f1 y9620)) (= y9620 (f2 y9616 PLACEHOLDER))) 
+    (and (= y9621 (f1 y9622)) (= y9622 (f2 y9621 PLACEHOLDER))) (= y9623 (f1 y9623)) 
+    (and (= y9624 (f1 y9625)) (= y9625 (f2 y9626 (f2 (f1 PLACEHOLDER) PLACEHOLDER))) (= y9626 (f2 y9627 (f1 (f2 PLACEHOLDER PLACEHOLDER)))) (= y9627 (f2 y9628 (f2 PLACEHOLDER PLACEHOLDER))) (= y9628 (f2 y9624 PLACEHOLDER))) 
+    (and (= y9629 (f1 y9630)) (= y9630 (f1 y9631)) (= y9631 (f2 y9629 PLACEHOLDER))) 
+    (and (= y9632 (f1 (f1 y9633))) (= y9633 (f1 y9634)) (= y9634 (f1 y9632))) 
+    (and (= y9635 (f2 y9636 PLACEHOLDER)) (= y9636 (f1 y9637)) (= y9637 (f2 y9638 (f2 PLACEHOLDER PLACEHOLDER))) (= y9638 (f2 y9635 PLACEHOLDER))) 
+    (and (= y9639 (f2 y9640 (f1 (f1 PLACEHOLDER)))) (= y9640 (f1 y9641)) (= y9641 (f2 y9639 PLACEHOLDER))) 
+    (and (= y9642 (f2 y9643 PLACEHOLDER)) (= y9643 (f2 y9644 (f1 (f2 PLACEHOLDER PLACEHOLDER)))) (= y9644 (f1 y9645)) (= y9645 (f2 y9642 PLACEHOLDER))))))
+(check-sat)

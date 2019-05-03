@@ -1,0 +1,14 @@
+(set-info :status unsat)
+(declare-codatatypes ((T 0)) ((
+  (f0)
+  (f1 (proj0f1 T))
+  (f2 (proj0f2 T) (proj1f2 T) (proj2f2 T))
+  (f3 (proj0f3 T) (proj1f3 T) (proj2f3 T) (proj3f3 T))
+  (f4 (proj0f4 T) (proj1f4 T) (proj2f4 T)))))
+(assert (exists ((y4808 T) (y4809 T) (y4794 T) (y4795 T) (y4796 T) (y4797 T) (y4800 T) (y4799 T) (y4802 T) (y4803 T) (y4804 T) (y4805 T) (y4806 T) (y4807 T) (y4798 T) (y4801 T)) 
+  (or 
+    (and (= y4794 (f4 y4796 PLACEHOLDER PLACEHOLDER)) (= y4796 (f4 y4794 PLACEHOLDER PLACEHOLDER)) (= y4795 (f4 y4797 PLACEHOLDER PLACEHOLDER)) (= y4797 (f4 y4795 PLACEHOLDER PLACEHOLDER)) (distinct y4794 y4795)) 
+    (and (= y4798 (f4 y4798 y4798 PLACEHOLDER)) (= y4799 (f4 y4799 y4799 PLACEHOLDER)) (distinct y4798 y4799)) 
+    (and (= y4800 (f1 y4802)) (= y4802 (f2 (f1 (f3 y4800 PLACEHOLDER PLACEHOLDER PLACEHOLDER)) y4803 (f4 PLACEHOLDER PLACEHOLDER PLACEHOLDER))) (= y4803 (f1 y4804)) (= y4804 (f4 y4800 PLACEHOLDER PLACEHOLDER)) (= y4801 (f1 y4805)) (= y4805 (f2 (f1 (f3 y4801 PLACEHOLDER PLACEHOLDER PLACEHOLDER)) y4806 (f4 PLACEHOLDER PLACEHOLDER PLACEHOLDER))) (= y4806 (f1 y4807)) (= y4807 (f4 y4801 PLACEHOLDER PLACEHOLDER)) (distinct y4800 y4801)) 
+    (and (= y4808 (f3 y4808 PLACEHOLDER PLACEHOLDER PLACEHOLDER)) (= y4809 (f3 y4809 PLACEHOLDER PLACEHOLDER PLACEHOLDER)) (distinct y4808 y4809)))))
+(check-sat)

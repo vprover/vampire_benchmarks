@@ -1,0 +1,13 @@
+(set-info :status unsat)
+(declare-datatypes ((T 0)) ((
+  (f0)
+  (f1 (proj0f1 T))
+  (f2 (proj0f2 T) (proj1f2 T)))))
+(assert (exists ((y18453 T) (y18455 T) (y18452 T) (y18451 T) (y18444 T) (y18445 T) (y18446 T) (y18447 T) (y18457 T) (y18442 T) (y18443 T) (y18458 T) (y18448 T) (y18449 T) (y18450 T)) (forall ((x18465 T) (x18467 T) (x18466 T) (x18461 T) (x18470 T) (x18462 T) (x18469 T) (x18468 T)) 
+  (or (= x18465 (f1 x18465)) (= y18442 (f1 y18442)) (= y18443 (f1 (f2 (f2 y18443 PLACEHOLDER) (f2 PLACEHOLDER PLACEHOLDER)))) 
+    (and (= y18444 (f1 y18445)) (= y18445 (f1 y18446)) (= y18446 (f2 y18444 PLACEHOLDER))) 
+    (and (= y18447 (f1 y18448)) (= y18448 (f2 y18449 PLACEHOLDER)) (= y18449 x18461)) 
+    (and (= y18450 (f2 x18468 PLACEHOLDER)) (= y18451 (f2 y18452 PLACEHOLDER)) (= y18452 (f2 y18450 PLACEHOLDER))) (= y18453 (f1 y18453)) 
+    (and (= x18470 (f1 y18455)) (= y18455 (f2 x18469 (f1 (f1 PLACEHOLDER)))) (= x18469 x18462) (= y18457 (f2 y18458 PLACEHOLDER)) (= y18458 (f2 x18470 PLACEHOLDER))) 
+    (and (= x18467 (f1 x18466)) (= x18466 (f1 x18467)))))))
+(check-sat)

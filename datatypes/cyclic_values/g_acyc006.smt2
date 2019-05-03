@@ -1,0 +1,15 @@
+(set-info :status unsat)
+(declare-datatypes ((T 0)) ((
+  (f0)
+  (f1 (proj0f1 T))
+  (f2 (proj0f2 T) (proj1f2 T) (proj2f2 T) (proj3f2 T))
+  (f3 (proj0f3 T) (proj1f3 T))
+  (f4 (proj0f4 T) (proj1f4 T) (proj2f4 T) (proj3f4 T)))))
+(assert (exists ((y779 T) (y776 T) (y777 T) (y780 T) (y778 T) (y766 T) (y767 T) (y775 T) (y774 T) (y768 T) (y769 T) (y771 T) (y770 T) (y773 T) (y772 T)) 
+  (or 
+    (and (= y766 (f2 y767 PLACEHOLDER (f4 PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER) (f1 (f1 PLACEHOLDER)))) (= y767 (f1 y768)) (= y768 (f1 y766))) 
+    (and (= y769 (f2 y770 PLACEHOLDER PLACEHOLDER (f4 PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER))) (= y770 (f4 y771 PLACEHOLDER PLACEHOLDER (f1 PLACEHOLDER))) (= y771 (f3 y769 PLACEHOLDER))) 
+    (and (= y772 (f3 y773 (f1 (f1 PLACEHOLDER)))) (= y773 (f1 y774)) (= y774 (f3 y772 PLACEHOLDER))) 
+    (and (= y775 (f4 (f3 y775 PLACEHOLDER) PLACEHOLDER y776 (f1 PLACEHOLDER))) (= y776 (f1 y777)) (= y777 (f3 y778 (f3 PLACEHOLDER PLACEHOLDER))) (= y778 (f4 y775 PLACEHOLDER PLACEHOLDER PLACEHOLDER))) 
+    (and (= y779 (f1 y780)) (= y780 (f4 y779 PLACEHOLDER PLACEHOLDER PLACEHOLDER))))))
+(check-sat)

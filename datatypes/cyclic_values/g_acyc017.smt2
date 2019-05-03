@@ -1,0 +1,15 @@
+(set-info :status unsat)
+(declare-datatypes ((T 0)) ((
+  (f0)
+  (f1 (proj0f1 T))
+  (f2 (proj0f2 T) (proj1f2 T) (proj2f2 T))
+  (f3 (proj0f3 T) (proj1f3 T))
+  (f4 (proj0f4 T)))))
+(assert (exists ((y1748 T) (y1749 T) (y1760 T) (y1745 T) (y1759 T) (y1758 T) (y1757 T) (y1756 T) (y1755 T) (y1754 T) (y1753 T) (y1752 T) (y1751 T) (y1750 T) (y1746 T) (y1747 T)) 
+  (or 
+    (and (= y1745 (f4 (f1 (f3 y1746 PLACEHOLDER)))) (= y1746 (f1 y1745))) 
+    (and (= y1747 (f2 y1748 PLACEHOLDER (f3 (f3 PLACEHOLDER PLACEHOLDER) PLACEHOLDER))) (= y1748 (f2 (f4 y1747) y1749 PLACEHOLDER)) (= y1749 (f4 y1747))) 
+    (and (= y1750 (f3 y1751 (f4 (f4 (f3 (f1 PLACEHOLDER) (f2 PLACEHOLDER PLACEHOLDER PLACEHOLDER)))))) (= y1751 (f3 y1752 (f1 (f1 (f4 PLACEHOLDER))))) (= y1752 (f3 y1753 PLACEHOLDER)) (= y1753 (f2 y1754 PLACEHOLDER PLACEHOLDER)) (= y1754 (f2 y1750 PLACEHOLDER PLACEHOLDER))) 
+    (and (= y1755 (f2 (f1 y1756) (f4 PLACEHOLDER) (f3 PLACEHOLDER (f2 PLACEHOLDER PLACEHOLDER PLACEHOLDER)))) (= y1756 (f4 y1755))) 
+    (and (= y1757 (f4 y1758)) (= y1758 (f2 y1759 PLACEHOLDER (f3 PLACEHOLDER PLACEHOLDER))) (= y1759 (f4 y1760)) (= y1760 (f4 y1757))))))
+(check-sat)

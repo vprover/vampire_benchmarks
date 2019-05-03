@@ -1,0 +1,16 @@
+(set-info :status unsat)
+(declare-codatatypes ((T 0)) ((
+  (f0)
+  (f1 (proj0f1 T))
+  (f2 (proj0f2 T))
+  (f3 (proj0f3 T) (proj1f3 T)))))
+(assert (exists ((y3999 T) (y3998 T) (y4011 T) (y3993 T) (y3992 T) (y3991 T) (y3990 T) (y3997 T) (y3996 T) (y3995 T) (y3994 T) (y4000 T) (y4001 T) (y4002 T) (y4014 T) (y4004 T) (y4005 T) (y4006 T) (y4007 T) (y4008 T) (y4019 T) (y4018 T) (y4017 T) (y4015 T) (y4010 T) (y3985 T) (y3986 T) (y3982 T) (y4013 T) (y3988 T) (y4012 T)) (forall ((x4029 T) (x4028 T) (x4030 T) (x4026 T) (x4025 T) (x4024 T) (x4023 T) (x4022 T) (x4021 T)) 
+  (or 
+    (and (= x4024 (f2 x4024)) (= y3982 (f2 y3982)) (distinct x4024 y3982)) 
+    (and (= x4021 (f3 y3985 PLACEHOLDER)) (= y3985 (f2 x4021)) (= x4030 (f3 y3986 PLACEHOLDER)) (= y3986 (f2 x4030)) (distinct x4021 x4030)) 
+    (and (= x4023 (f3 x4026 (f3 PLACEHOLDER PLACEHOLDER))) (= x4026 (f3 y3990 (f2 PLACEHOLDER))) (= y3990 (f3 y3991 (f3 (f1 PLACEHOLDER) (f3 PLACEHOLDER PLACEHOLDER)))) (= y3991 (f1 y3992)) (= y3992 (f1 x4023)) (= y3988 (f3 (f3 y3993 (f2 PLACEHOLDER)) (f3 PLACEHOLDER PLACEHOLDER))) (= y3993 (f3 y3994 (f3 (f1 PLACEHOLDER) (f3 PLACEHOLDER PLACEHOLDER)))) (= y3994 (f1 y3995)) (= y3995 (f1 y3988)) (distinct x4023 y3988)) 
+    (and (= y3996 (f2 y3998)) (= y3998 (f2 y3999)) (= y3999 (f2 y3996)) (= y3997 (f2 y4000)) (= y4000 (f2 y4001)) (= y4001 (f2 y3997)) (distinct y3996 y3997)) 
+    (and (= y4002 (f1 y4002)) (= x4025 (f1 x4025)) (distinct y4002 x4025)) 
+    (and (= y4004 (f2 y4006)) (= y4006 (f3 y4007 PLACEHOLDER)) (= y4007 (f1 y4008)) (= y4008 (f3 x4029 PLACEHOLDER)) (= x4029 (f3 y4004 PLACEHOLDER)) (= y4005 (f2 y4010)) (= y4010 (f3 y4011 PLACEHOLDER)) (= y4011 (f1 y4012)) (= y4012 (f3 y4013 PLACEHOLDER)) (= y4013 (f3 y4005 PLACEHOLDER)) (distinct y4004 y4005)) 
+    (and (= y4014 (f2 (f1 x4028))) (= x4028 (f3 y4017 PLACEHOLDER)) (= y4017 (f3 y4014 PLACEHOLDER)) (= y4015 (f2 y4018)) (= y4018 (f1 y4019)) (= y4019 (f3 x4022 PLACEHOLDER)) (= x4022 (f3 y4015 PLACEHOLDER)) (distinct y4014 y4015))))))
+(check-sat)

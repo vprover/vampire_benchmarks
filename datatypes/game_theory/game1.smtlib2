@@ -1,0 +1,4 @@
+(set-info :status unsat)
+(declare-datatypes ((Nat 0)) (((z) (s (pred Nat)))))
+(assert (not (exists ((w1 Nat)) (and (or (= (s z) (s w1)) (= (s z) (s (s w1)))) (forall ((w0 Nat)) (=> (or (= w1 (s w0)) (= w1 (s (s w0)))) false))))))
+(check-sat)

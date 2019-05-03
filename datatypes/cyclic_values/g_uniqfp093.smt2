@@ -1,0 +1,10 @@
+(set-info :status unsat)
+(declare-codatatypes ((T 0)) ((
+  (f0)
+  (f1 (proj0f1 T) (proj1f1 T) (proj2f1 T))
+  (f2 (proj0f2 T) (proj1f2 T))
+  (f3 (proj0f3 T) (proj1f3 T) (proj2f3 T) (proj3f3 T))
+  (f4 (proj0f4 T)))))
+(assert (exists ((y9982 T) (y9981 T)) 
+    (and (= y9981 (f2 y9981 PLACEHOLDER)) (= y9982 (f2 y9982 PLACEHOLDER)) (distinct y9981 y9982))))
+(check-sat)

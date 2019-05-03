@@ -1,0 +1,10 @@
+(set-info :status unsat)
+(declare-codatatypes ((T 0)) ((
+  (f0)
+  (f1 (proj0f1 T))
+  (f2 (proj0f2 T))
+  (f3 (proj0f3 T) (proj1f3 T))
+  (f4 (proj0f4 T) (proj1f4 T)))))
+(assert (forall ((x7556 T) (x7557 T) (x7555 T) (x7558 T) (x7559 T)) 
+  (or (distinct x7555 (f4 x7556 (f4 (f1 PLACEHOLDER) (f2 (f3 (f2 PLACEHOLDER) PLACEHOLDER))))) (distinct x7556 (f3 x7557 (f2 (f3 (f2 PLACEHOLDER) (f4 PLACEHOLDER PLACEHOLDER))))) (distinct x7557 (f4 x7558 (f3 PLACEHOLDER PLACEHOLDER))) (distinct x7558 (f2 x7559)) (distinct x7559 (f1 x7555)))))
+(check-sat)

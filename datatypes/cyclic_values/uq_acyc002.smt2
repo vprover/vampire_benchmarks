@@ -1,0 +1,16 @@
+(set-info :status unsat)
+(declare-datatypes ((T 0)) ((
+  (f0)
+  (f1 (proj0f1 T) (proj1f1 T) (proj2f1 T))
+  (f2 (proj0f2 T))
+  (f3 (proj0f3 T)))))
+(assert (exists ((y307 T) (y325 T) (y326 T) (y321 T) (y312 T) (y320 T) (y322 T) (y308 T) (y309 T) (y319 T) (y318 T) (y317 T) (y316 T) (y315 T) (y314 T) (y313 T) (y306 T) (y311 T) (y310 T)) (forall ((x333 T) (x339 T) (x336 T) (x337 T) (x335 T) (x338 T) (x340 T) (x341 T)) 
+  (or 
+    (and (= y306 (f3 y307)) (= y307 (f2 y308)) (= y308 (f2 y309)) (= y309 (f2 y306))) 
+    (and (= y310 (f2 y311)) (= y311 (f1 y312 (f1 PLACEHOLDER PLACEHOLDER PLACEHOLDER) (f1 (f1 PLACEHOLDER PLACEHOLDER PLACEHOLDER) PLACEHOLDER (f1 PLACEHOLDER PLACEHOLDER PLACEHOLDER)))) (= y312 (f3 y313)) (= y313 (f1 y310 y310 PLACEHOLDER))) 
+    (and (= y314 (f3 y315)) (= y315 (f3 y316)) (= y316 x333) (= y317 (f3 y314))) 
+    (and (= y318 (f2 y319)) (= y319 (f1 (f1 y318 PLACEHOLDER PLACEHOLDER) y320 (f3 (f3 PLACEHOLDER)))) (= y320 (f1 y321 PLACEHOLDER PLACEHOLDER)) (= y321 (f3 y318))) 
+    (and (= y322 (f3 x341)) (= x341 (f1 x340 PLACEHOLDER (f2 PLACEHOLDER))) (= x340 (f2 y322))) (= y325 (f2 y325)) 
+    (and (= y326 (f2 x337)) (= x337 (f3 x338)) (= x338 (f1 y326 PLACEHOLDER PLACEHOLDER))) 
+    (and (= x336 (f3 x335)) (= x335 (f3 x336))) (= x339 (f1 x339 PLACEHOLDER PLACEHOLDER))))))
+(check-sat)
