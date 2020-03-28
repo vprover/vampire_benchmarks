@@ -35,6 +35,6 @@ include('Axioms/NUM006^0.ax').
 thf(thm,conjecture,(
     ? [N: ( $i > $i ) > $i > $i,M: ( $i > $i ) > $i > $i] :
       ( ( mult @ N @ three )
-      = ( plus @ six @ M ) ) )).
+      = ( plus @ six @ N ) ) )).
 
 %------------------------------------------------------------------------------
