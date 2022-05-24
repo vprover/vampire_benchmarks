@@ -11,7 +11,7 @@ vampire(option,show_interpolant,new_opt).
 %colors
 vampire(symbol,function,car,1,left).
 vampire(symbol,function,cdr,1,left).
-vampire(symbol,function,atom,1,left).
+vampire(symbol,predicate,atom,1,left).
 
 % \forall x,y,z: Not(atom(x)) => cons(car(x),cdr(x))=x
 fof(a,axiom,( ~atom(X) => cons(car(X),cdr(X))=X )).

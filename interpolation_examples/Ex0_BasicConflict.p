@@ -1,6 +1,6 @@
 
 vampire(option,avatar,off).
-vampire(option,show_interpolant,new_heur).
+vampire(option,show_interpolant,new_opt).
 vampire(symbol,function,z,0,left).
 
 vampire(left_formula).
