@@ -20,6 +20,4 @@
 ; Conjecture as a synthesis problem: if a group is not commutative, there exists an element A such that (op A A)!=e
 (assert-not (forall ((x s) (y s)) (exists ((z s)) (=> (not (= (op x y) (op y x))) (not (= (op z z) e))))))
 
-(set-option :uncomputable (e))
-
 (check-sat)
