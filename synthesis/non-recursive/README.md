@@ -1,4 +1,4 @@
-# Synthesis
+# Synthesis (non recursive)
 
 The directories `smt2` and `sl` contain examples encoded in an extended SMT-LIB2 syntax and SyGuS 2.1 syntax, respectively.
 Examples with filenames starting with `group` are only in `smt2` version, because they cannot be encoded in SyGuS 2.1 syntax (as they use uninterpreted functions).
