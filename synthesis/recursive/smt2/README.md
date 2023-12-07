@@ -114,3 +114,50 @@
     % ------------------------------
 
     ```
+
+* Addition of two natural numbers 
+    ```
+    $ ./bin/vampire_z3_rel_static_synthesis-recursive_7028 --induction struct --question_answering synthesis --induction_unit_only off ../benchmarks/addition.smt2 
+    % Running in auto input_syntax mode. Trying SMTLIB2
+    % Refutation found. Thanks to Tanya!
+    % SZS status Unsatisfiable for addition
+    % SZS answers Tuple [[rec3(X0,s(sK5),X1)]|_] for addition
+    % SZS output start Proof for addition
+    1. ! [X0 : 'Nat()'] : s2(X0,zero) = X0 [input]
+    2. ! [X1 : 'Nat()',X0 : 'Nat()'] : s(s2(X0,X1)) = s2(X0,s(X1)) [input]
+    3. ! [X1 : 'Nat()',X0 : 'Nat()'] : ? [X2 : 'Nat()'] : s2(X0,X1) = X2 [input]
+    4. ~! [X1 : 'Nat()',X0 : 'Nat()'] : ? [X2 : 'Nat()'] : s2(X0,X1) = X2 [negated conjecture 3]
+    8. ! [X2 : 'Nat()'] : ~(s2(sK2_in,sK1_in) = X2 & ans0(X2)) [answer literal with input var skolemisation 4]
+    9. ! [X0 : 'Nat()'] : ~(s2(sK2_in,sK1_in) = X0 & ans0(X0)) [rectify 8]
+    10. ! [X0 : 'Nat()',X1 : 'Nat()'] : s(s2(X1,X0)) = s2(X1,s(X0)) [rectify 2]
+    11. ! [X0 : 'Nat()'] : (s2(sK2_in,sK1_in) != X0 | ~ans0(X0)) [ennf transformation 9]
+    12. s2(sK2_in,sK1_in) != X0 | ~ans0(X0) [cnf transformation 11]
+    13. s(s2(X1,X0)) = s2(X1,s(X0)) [cnf transformation 10]
+    14. s2(X0,zero) = X0 [cnf transformation 1]
+    16. ? [X2 : 'Nat()'] : ? [X3 : 'Nat()'] : ! [X4 : 'Nat()',X1 : 'Nat()'] : ! [X5 : 'Nat()'] : ((s2(sK2_in,zero) = X1 & (s2(sK2_in,X2) = X3 => s2(sK2_in,s(X2)) = X4)) => rec3(X1,X4,X5) = s2(sK2_in,X5)) [structural induction hypothesis]
+    17. ? [X2 : 'Nat()'] : ? [X3 : 'Nat()'] : ! [X4 : 'Nat()',X1 : 'Nat()'] : ! [X5 : 'Nat()'] : (rec3(X1,X4,X5) = s2(sK2_in,X5) | (s2(sK2_in,zero) != X1 | (s2(sK2_in,s(X2)) != X4 & s2(sK2_in,X2) = X3))) [ennf transformation 16]
+    18. sK5 = s2(sK2_in,sK4) | s2(sK2_in,zero) != X1 | rec3(X1,X4,X5) = s2(sK2_in,X5) [cnf transformation 17]
+    19. s2(sK2_in,s(sK4)) != X4 | s2(sK2_in,zero) != X1 | rec3(X1,X4,X5) = s2(sK2_in,X5) [cnf transformation 17]
+    20. s2(sK2_in,s(sK4)) != X1 | s2(sK2_in,zero) != X0 | ~ans0(rec3(X0,X1,sK1_in)) [resolution 19,12]
+    21. sK5 = s2(sK2_in,sK4) | s2(sK2_in,zero) != X0 | ~ans0(rec3(X0,X1,sK1_in)) [resolution 18,12]
+    28. sK2_in != X0 | sK5 = s2(sK2_in,sK4) | ~ans0(rec3(X0,X1,sK1_in)) [forward demodulation 21,14]
+    29. s(s2(sK2_in,sK4)) != X1 | s2(sK2_in,zero) != X0 | ~ans0(rec3(X0,X1,sK1_in)) [forward demodulation 20,13]
+    30. s(s2(sK2_in,sK4)) != X1 | sK2_in != X0 | ~ans0(rec3(X0,X1,sK1_in)) [forward demodulation 29,14]
+    60. sK5 = s2(sK2_in,sK4) | ~ans0(rec3(sK2_in,X0,sK1_in)) [equality resolution 28]
+    93. s(sK5) != X0 | sK2_in != sK2_in | ~ans0(rec3(sK2_in,X0,sK1_in)) [superposition 30,60]
+    96. s(sK5) != X0 | ~ans0(rec3(sK2_in,X0,sK1_in)) [trivial inequality removal 93]
+    107. ~ans0(rec3(sK2_in,s(sK5),sK1_in)) [equality resolution 96]
+    108. ans0(X0) [answer literal]
+    109. $false [unit resulting resolution 108,107]
+    % SZS output end Proof for addition
+    % ------------------------------
+    % Version: Vampire 4.8 (commit 6a2544246 on 2023-12-02 00:34:45 +0100)
+    % Linked with Z3 4.12.2.0 e417f7d78509b2d0c9ebc911fee7632e6ef546b6 z3-4.8.4-7517-ge417f7d78
+    % Termination reason: Refutation
+
+    % Memory used [KB]: 428
+    % Time elapsed: 0.059 s
+    % ------------------------------
+    % ------------------------------
+
+    ```
