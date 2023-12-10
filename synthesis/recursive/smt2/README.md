@@ -161,3 +161,54 @@
     % ------------------------------
 
     ```
+
+* Associativity in natural numbers:
+    ```
+        $ ./bin/vampire_z3_rel_static_synthesis-recursive_7041 --induction struct --question_answering synthesis --induction_unit_only off ../benchmarks/nat_assoc.smt2 
+    % Running in auto input_syntax mode. Trying SMTLIB2
+    % Refutation found. Thanks to Tanya!
+    % SZS status Unsatisfiable for nat_assoc
+    % SZS answers Tuple [[rec13(sK15,plus(X1,X2),X0)]|_] for nat_assoc
+    % SZS output start Proof for nat_assoc
+    1. ! [X0 : 'nat()'] : plus(zero,X0) = X0 [input]
+    2. ! [X1 : 'nat()',X0 : 'nat()'] : succ(plus(X0,X1)) = plus(succ(X0),X1) [input]
+    3. ! [X1 : 'nat()',X0 : 'nat()',X2 : 'nat()'] : ? [X3 : 'nat()'] : plus(X0,X3) = plus(plus(X0,X1),X2) [input]
+    4. ~! [X1 : 'nat()',X0 : 'nat()',X2 : 'nat()'] : ? [X3 : 'nat()'] : plus(X0,X3) = plus(plus(X0,X1),X2) [negated conjecture 3]
+    8. ! [X3 : 'nat()'] : ~(plus(sK2_in,X3) = plus(plus(sK2_in,sK1_in),sK3_in) & ans0(X3)) [answer literal with input var skolemisation 4]
+    9. ! [X0 : 'nat()'] : ~(plus(plus(sK2_in,sK1_in),sK3_in) = plus(sK2_in,X0) & ans0(X0)) [rectify 8]
+    10. ! [X0 : 'nat()',X1 : 'nat()'] : succ(plus(X1,X0)) = plus(succ(X1),X0) [rectify 2]
+    11. ! [X0 : 'nat()'] : (plus(plus(sK2_in,sK1_in),sK3_in) != plus(sK2_in,X0) | ~ans0(X0)) [ennf transformation 9]
+    12. plus(plus(sK2_in,sK1_in),sK3_in) != plus(sK2_in,X0) | ~ans0(X0) [cnf transformation 11]
+    13. succ(plus(X1,X0)) = plus(succ(X1),X0) [cnf transformation 10]
+    14. plus(zero,X0) = X0 [cnf transformation 1]
+    42. ? [X1 : 'nat()'] : ? [X2 : 'nat()'] : ! [X4 : 'nat()',X3 : 'nat()'] : ! [X5 : 'nat()'] : (((plus(plus(X1,sK1_in),sK3_in) = plus(X1,X2) => plus(plus(succ(X1),sK1_in),sK3_in) = plus(succ(X1),X3)) & ($true => plus(plus(zero,sK1_in),sK3_in) = plus(zero,X4))) => plus(plus(X5,sK1_in),sK3_in) = plus(X5,rec13(X3,X4,X5))) [structural induction hypothesis]
+    43. ? [X1 : 'nat()'] : ? [X2 : 'nat()'] : ! [X4 : 'nat()',X3 : 'nat()'] : ! [X5 : 'nat()'] : (plus(plus(X5,sK1_in),sK3_in) = plus(X5,rec13(X3,X4,X5)) | ((plus(plus(succ(X1),sK1_in),sK3_in) != plus(succ(X1),X3) & plus(plus(X1,sK1_in),sK3_in) = plus(X1,X2)) | (plus(plus(zero,sK1_in),sK3_in) != plus(zero,X4) & $true))) [ennf transformation 42]
+    44. plus(plus(zero,sK1_in),sK3_in) != plus(zero,X4) | plus(plus(sK14,sK1_in),sK3_in) = plus(sK14,sK15) | plus(plus(X5,sK1_in),sK3_in) = plus(X5,rec13(X3,X4,X5)) [cnf transformation 43]
+    45. plus(plus(zero,sK1_in),sK3_in) != plus(zero,X4) | plus(plus(succ(sK14),sK1_in),sK3_in) != plus(succ(sK14),X3) | plus(plus(X5,sK1_in),sK3_in) = plus(X5,rec13(X3,X4,X5)) [cnf transformation 43]
+    46. plus(plus(zero,sK1_in),sK3_in) != plus(zero,X1) | plus(plus(succ(sK14),sK1_in),sK3_in) != plus(succ(sK14),X0) | ~ans0(rec13(X0,X1,sK2_in)) [resolution 45,12]
+    47. plus(plus(zero,sK1_in),sK3_in) != plus(zero,X1) | plus(plus(sK14,sK1_in),sK3_in) = plus(sK14,sK15) | ~ans0(rec13(X0,X1,sK2_in)) [resolution 44,12]
+    48. plus(plus(zero,sK1_in),sK3_in) != X1 | plus(plus(sK14,sK1_in),sK3_in) = plus(sK14,sK15) | ~ans0(rec13(X0,X1,sK2_in)) [forward demodulation 47,14]
+    49. plus(sK1_in,sK3_in) != X1 | plus(plus(sK14,sK1_in),sK3_in) = plus(sK14,sK15) | ~ans0(rec13(X0,X1,sK2_in)) [forward demodulation 48,14]
+    50. plus(plus(zero,sK1_in),sK3_in) != X1 | plus(plus(succ(sK14),sK1_in),sK3_in) != plus(succ(sK14),X0) | ~ans0(rec13(X0,X1,sK2_in)) [forward demodulation 46,14]
+    51. plus(sK1_in,sK3_in) != X1 | plus(plus(succ(sK14),sK1_in),sK3_in) != plus(succ(sK14),X0) | ~ans0(rec13(X0,X1,sK2_in)) [forward demodulation 50,14]
+    52. plus(plus(succ(sK14),sK1_in),sK3_in) != succ(plus(sK14,X0)) | plus(sK1_in,sK3_in) != X1 | ~ans0(rec13(X0,X1,sK2_in)) [forward demodulation 51,13]
+    53. succ(plus(sK14,X0)) != plus(succ(plus(sK14,sK1_in)),sK3_in) | plus(sK1_in,sK3_in) != X1 | ~ans0(rec13(X0,X1,sK2_in)) [forward demodulation 52,13]
+    54. succ(plus(sK14,X0)) != succ(plus(plus(sK14,sK1_in),sK3_in)) | plus(sK1_in,sK3_in) != X1 | ~ans0(rec13(X0,X1,sK2_in)) [forward demodulation 53,13]
+    82. plus(plus(sK14,sK1_in),sK3_in) = plus(sK14,sK15) | ~ans0(rec13(X0,plus(sK1_in,sK3_in),sK2_in)) [equality resolution 49]
+    519. succ(plus(sK14,X0)) != succ(plus(sK14,sK15)) | plus(sK1_in,sK3_in) != plus(sK1_in,sK3_in) | ~ans0(rec13(X0,plus(sK1_in,sK3_in),sK2_in)) [superposition 54,82]
+    532. succ(plus(sK14,X0)) != succ(plus(sK14,sK15)) | ~ans0(rec13(X0,plus(sK1_in,sK3_in),sK2_in)) [trivial inequality removal 519]
+    533. plus(sK14,sK15) != plus(sK14,X0) | ~ans0(rec13(X0,plus(sK1_in,sK3_in),sK2_in)) [term algebras injectivity 532]
+    536. ~ans0(rec13(sK15,plus(sK1_in,sK3_in),sK2_in)) [equality resolution 533]
+    537. ans0(X0) [answer literal]
+    538. $false [unit resulting resolution 537,536]
+    % SZS output end Proof for nat_assoc
+    % ------------------------------
+    % Version: Vampire 4.8 (commit 972db973f on 2023-12-09 16:49:58 +0100)
+    % Linked with Z3 4.12.2.0 e417f7d78509b2d0c9ebc911fee7632e6ef546b6 z3-4.8.4-7517-ge417f7d78
+    % Termination reason: Refutation
+
+    % Memory used [KB]: 830
+    % Time elapsed: 0.117 s
+    % ------------------------------
+    % ------------------------------
+    ```
