@@ -1,5 +1,7 @@
 # Synthesis (recursive)
 
+For each benchmark, you will find the options used to execute Vampire, and the produced refutation:
+
 * Half:
     ```
     $ ./bin/vampire_z3_rel_static_synthesis-recursive_7003 --induction struct ../benchmarks/half.smt2 --question_answering synthesis --induction_unit_only off
