@@ -214,3 +214,55 @@ For each benchmark, you will find the options used to execute Vampire, and the p
     % ------------------------------
     % ------------------------------
     ```
+
+* size of a binary tree:
+
+    ```
+    $ ./bin/vampire_z3_rel_static_synthesis-recursive_7053 --induction struct --question_answering synthesis --induction_unit_only off ../benchmarks/bt-size.smt2
+    % Running in auto input_syntax mode. Trying SMTLIB2
+    % Refutation found. Thanks to Tanya!
+    % SZS status Unsatisfiable for bt-size
+    % SZS answers Tuple [[rec2(zero,s(s2(sK7,sK6)),X0)]|_] for bt-size
+    % SZS output start Proof for bt-size
+    3. zero = size('Nil') [input]
+    4. ! [X2 : 'nat()',X1 : 'tree()',X0 : 'tree()'] : s(s2(size(X0),size(X1))) = size(node(X0,X2,X1)) [input]
+    5. ! [X0 : 'tree()'] : ? [X1 : 'nat()'] : size(X0) = X1 [input]
+    6. ~! [X0 : 'tree()'] : ? [X1 : 'nat()'] : size(X0) = X1 [negated conjecture 5]
+    15. ! [X1 : 'nat()'] : ~(size(sK1_in) = X1 & ans0(X1)) [answer literal with input var skolemisation 6]
+    16. ! [X0 : 'nat()'] : ~(size(sK1_in) = X0 & ans0(X0)) [rectify 15]
+    17. ! [X0 : 'nat()',X1 : 'tree()',X2 : 'tree()'] : s(s2(size(X2),size(X1))) = size(node(X2,X0,X1)) [rectify 4]
+    19. ! [X0 : 'nat()'] : (size(sK1_in) != X0 | ~ans0(X0)) [ennf transformation 16]
+    20. size(sK1_in) != X0 | ~ans0(X0) [cnf transformation 19]
+    21. s(s2(size(X2),size(X1))) = size(node(X2,X0,X1)) [cnf transformation 17]
+    22. zero = size('Nil') [cnf transformation 3]
+    26. ? [X5 : 'tree()',X4 : 'nat()',X2 : 'tree()'] : ? [X6 : 'nat()',X3 : 'nat()'] : ! [X7 : 'nat()',X1 : 'nat()'] : ! [X8 : 'tree()'] : ((size('Nil') = X1 & ((size(X2) = X3 & size(X5) = X6) => size(node(X2,X4,X5)) = X7)) => rec2(X1,X7,X8) = size(X8)) [structural induction hypothesis]
+    27. ? [X5 : 'tree()',X4 : 'nat()',X2 : 'tree()'] : ? [X6 : 'nat()',X3 : 'nat()'] : ! [X7 : 'nat()',X1 : 'nat()'] : ! [X8 : 'tree()'] : (rec2(X1,X7,X8) = size(X8) | (size('Nil') != X1 | (size(node(X2,X4,X5)) != X7 & (size(X2) = X3 & size(X5) = X6)))) [ennf transformation 26]
+    28. sK6 = size(sK3) | size('Nil') != X1 | rec2(X1,X7,X8) = size(X8) [cnf transformation 27]
+    29. sK7 = size(sK5) | size('Nil') != X1 | rec2(X1,X7,X8) = size(X8) [cnf transformation 27]
+    30. size(node(sK5,sK4,sK3)) != X7 | size('Nil') != X1 | rec2(X1,X7,X8) = size(X8) [cnf transformation 27]
+    31. size(node(sK5,sK4,sK3)) != X1 | size('Nil') != X0 | ~ans0(rec2(X0,X1,sK1_in)) [resolution 30,20]
+    32. sK7 = size(sK5) | size('Nil') != X0 | ~ans0(rec2(X0,X1,sK1_in)) [resolution 29,20]
+    33. sK6 = size(sK3) | size('Nil') != X0 | ~ans0(rec2(X0,X1,sK1_in)) [resolution 28,20]
+    34. zero != X0 | sK6 = size(sK3) | ~ans0(rec2(X0,X1,sK1_in)) [forward demodulation 33,22]
+    35. zero != X0 | sK7 = size(sK5) | ~ans0(rec2(X0,X1,sK1_in)) [forward demodulation 32,22]
+    36. size(node(sK5,sK4,sK3)) != X1 | zero != X0 | ~ans0(rec2(X0,X1,sK1_in)) [forward demodulation 31,22]
+    217. sK6 = size(sK3) | ~ans0(rec2(zero,X0,sK1_in)) [equality resolution 34]
+    218. sK7 = size(sK5) | ~ans0(rec2(zero,X0,sK1_in)) [equality resolution 35]
+    222. size(node(X0,X1,sK3)) = s(s2(size(X0),sK6)) | ~ans0(rec2(zero,X2,sK1_in)) [superposition 21,217]
+    120657. s(s2(size(sK5),sK6)) != X0 | zero != zero | ~ans0(rec2(zero,X0,sK1_in)) [superposition 36,222]
+    120952. s(s2(size(sK5),sK6)) != X0 | ~ans0(rec2(zero,X0,sK1_in)) [trivial inequality removal 120657]
+    589983. s(s2(sK7,sK6)) != X0 | ~ans0(rec2(zero,X0,sK1_in)) [superposition 120952,218]
+    590074. ~ans0(rec2(zero,s(s2(sK7,sK6)),sK1_in)) [equality resolution 589983]
+    590075. ans0(X0) [answer literal]
+    590076. $false [unit resulting resolution 590075,590074]
+    % SZS output end Proof for bt-size
+    % ------------------------------
+    % Version: Vampire 4.8 (commit 7ca158189 on 2023-12-15 16:22:43 +0100)
+    % Linked with Z3 4.12.2.0 e417f7d78509b2d0c9ebc911fee7632e6ef546b6 z3-4.8.4-7517-ge417f7d78
+    % Termination reason: Refutation
+
+    % Memory used [KB]: 146672
+    % Time elapsed: 12.745 s
+    % ------------------------------
+    % ------------------------------
+    ```
