@@ -4,8 +4,6 @@ For the benchmarks `nat-add_assoc.smt2`, `nat-double.smt2`, `nat-double_even.smt
 ```
 ./vampire --forced_options ind=struct:indu=off:qa=synthesis:tgt=off:erd=off:updr=off:indc=goal:indmd=1 <benchmark.smt2>
 ```
-Vampire solves these problems well within one second.
-
 For the benchmark `nat-subtraction.smt2`, use:
 ```
 ./vampire --decode lrs+1011_2:5_av=off:bs=unit_only:erd=off:ind=struct:indmd=1:indu=off:nwc=5.0:plsq=on:qa=synthesis:tgt=off:updr=off_300 nat-subtraction.smt2
