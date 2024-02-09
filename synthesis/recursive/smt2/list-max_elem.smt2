@@ -34,9 +34,9 @@
 (assert (forall ((x nat) (y nat) (z nat)) (=> (and (or (leq x y) (leq x z)) (leq y z)) (leq x z))))
 
 ;; LIST AXIOMS
-; A8
+; A10
 (assert (forall ((x nat)) (not (inlst x nil))))
-; A9
+; A11
 (assert (forall ((l lst) (n nat) (k nat)) (= (inlst n (cons k l)) (or (inlst n l) (= n k)))))
 
 ; ENCODING OF THE SPECIFICATION USING A FRESH UNCOMPUTABLE PREDICATE p
