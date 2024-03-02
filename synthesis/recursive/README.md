@@ -1,5 +1,7 @@
 # Benchmarks for synthesis of recursive functions
 
+These benchmarks are meant to be run with the [`synthesis-recursive` branch of Vampire](https://github.com/vprover/vampire/tree/synthesis-recursive).
+
 For the benchmarks `nat-add_assoc.smt2`, `nat-double.smt2`, `nat-double_even.smt2`, `list-last_elem.smt2`, `list-len_concat.smt2`, use the following configuration:
 ```
 ./vampire --forced_options ind=struct:indu=off:qa=synthesis:tgt=off:erd=off:updr=off:indc=goal:indmd=1 <benchmark.smt2>
