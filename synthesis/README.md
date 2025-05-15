@@ -13,14 +13,21 @@ The format of the benchmarks is SMT-LIB-like with the following differences:
 
   `(set-option :uncomputable (u1 ... uk))`
 
+- we use the following command to assert auxiliary lemmas. The solver can either treat them as axioms, or can first prove them and only then use them:
+
+  `(assert-claim (<SMT-LIB encoding of the auxiliary lemma>))`
+
 Additionally we provide encoding of the benchmarks in SyGuS format.
 
-Descriptions of subdirectories follows (and will be finalized in the near future, together with adding new benchmarks).
+## Benchmark categories
 
-## `NR_LIA` and `NR_UF`
+The bechmarks are categorized into directories `{NR,R}_<logic>`, where `<logic>` corresponds to SMT-LIB logic name, and `NR` and `R` denotes non-recursive and recursive benchmarks, respectively.
+Recursive benchmarks use recursive function definitions while non-recursive functions do not.
+Since proving the specifications of recursive benchmarks may require induction, their solutions may be recursive programs.
 
-Benchmarks in these directories use linear integer arithmetic (LIA) and unconstrained uninterpreted functions (UF).
-They do not use recursively defined functions.
+Some category directories contain sub-directories, grouping similar benchmarks. E.g., `R_UFDT/list/rev` contains problems using list reversal.
+
+Finally, the deepest nested folder in the directory structure is either `smt2` or `sl`, containing the SMT-LIB or SyGuS files, respectively.
 
 ## Benchmarks used in the "synthesis in saturation" papers [2, 3]
 
