@@ -1,0 +1,13 @@
+(set-logic LRA)
+(set-feature :recursion true)
+
+
+(declare-var x1 Real)
+(declare-var x2 Real)
+
+
+(synth-fun fy ((x1 Real) (x2 Real)) Real)
+
+(constraint (and (>= (fy x1 x2) x1) (>= (fy x1 x2) x2) (or (= (fy x1 x2) x1) (= (fy x1 x2) x2))))
+
+(check-synth)

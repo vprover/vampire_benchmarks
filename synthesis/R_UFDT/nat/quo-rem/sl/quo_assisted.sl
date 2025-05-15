@@ -1,0 +1,26 @@
+(set-logic UFDT)
+(set-feature :recursion true)
+
+(declare-datatype nat ((zero) (s (s0 nat))))
+
+(declare-var x1 nat)
+(declare-var x2 nat)
+
+(define-fun-rec add ((x nat) (y nat)) nat (match y ((zero x) ((s y0) (s (add x y0))))))
+
+(define-fun-rec mult ((x nat) (y nat)) nat (match y ((zero zero) ((s y0) (add (mult x y0) x)))))
+
+(define-fun less ((x nat) (y nat)) Bool (exists ((k nat)) (= (add x (s k)) y)))
+
+(define-fun-rec rem ((x nat) (y nat)) nat (match x ((zero zero) ((s x0) (ite (= (s (rem x0 y)) y) zero (s (rem x0 y)))))))
+
+(assume (forall ((x nat)) (not (less x zero))))
+(assume (forall ((x nat) (y nat)) (=> (less x y) (distinct x y))))
+(assume (forall ((x nat) (y nat)) (=> (less x y) (or (less (s x) y) (= (s x) y)))))
+(assume (forall ((x nat) (y nat)) (=> (not (less x y)) (or (= y x) (less y x)))))
+
+(synth-fun fq ((x1 nat) (x2 nat)) nat)
+
+(constraint (or (= x2 zero) (= x1 (add (mult (fq x1 x2) x2) (rem x1 x2)))))
+
+(check-synth)

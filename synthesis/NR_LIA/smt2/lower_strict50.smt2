@@ -1,3 +1,5 @@
+(set-logic LIA)
+
 (assert-synth (
     (x0 Int)
     (x1 Int)

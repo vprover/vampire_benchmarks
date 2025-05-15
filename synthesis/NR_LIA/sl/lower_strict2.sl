@@ -1,15 +1,13 @@
 (set-logic LIA)
-(synth-fun f (
-  (x0 Int)
-  (x1 Int)
-  ) Int)
-(declare-var x0 Int)
-(declare-var x1 Int)
+(set-feature :recursion true)
 
-(constraint
-        (and
-            (> (f x0 x1) x0)
-            (> (f x0 x1) x1)
-))
+
+(declare-var x1 Int)
+(declare-var x2 Int)
+
+
+(synth-fun fy ((x1 Int) (x2 Int)) Int)
+
+(constraint (and (> x1 (fy x1 x2)) (> x2 (fy x1 x2))))
 
 (check-synth)
