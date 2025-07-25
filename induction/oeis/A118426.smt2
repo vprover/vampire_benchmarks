@@ -1,0 +1,89 @@
+(define-fun-rec
+  v5
+  ((x Int) (y Int) (z Int)) Int (ite (<= x 0) z (v5 (- x 1) y z)))
+(define-fun-rec
+  u5
+  ((x Int) (y Int) (z Int)) Int
+  (ite (<= x 0) y (* (u5 (- x 1) y z) (v5 (- x 1) y z))))
+(define-fun-rec
+  u4
+  ((x Int) (y Int)) Int (ite (<= x 0) y (* (u4 (- x 1) y) x)))
+(define-fun
+  v4
+  ((x Int)) Int (u4 x 1))
+(define-fun-rec
+  u1
+  ((x Int) (y Int)) Int (ite (<= x 0) y (* (u1 (- x 1) y) x)))
+(define-fun
+  v1
+  ((x Int)) Int (u1 x 1))
+(define-fun
+  j5
+  () Int (+ 1 (* 2 (+ 2 2))))
+(define-fun
+  h5
+  ((x Int)) Int (div x 2))
+(define-fun
+  g6
+  ((x Int)) Int (mod x 2))
+(define-fun
+  g5
+  ((x Int) (y Int)) Int y)
+(define-fun
+  g4
+  ((x Int)) Int x)
+(define-fun
+  g3
+  ((x Int)) Int x)
+(define-fun
+  g2
+  ((x Int)) Int x)
+(define-fun
+  g1
+  ((x Int)) Int x)
+(define-fun
+  g0
+  ((x Int)) Int x)
+(define-fun
+  f6
+  () Int (+ 1 2))
+(define-fun
+  u6
+  ((x Int) (y Int)) Int (ite (<= x 0) y f6))
+(define-fun
+  v6
+  ((x Int)) Int (u6 (g6 x) 1))
+(define-fun
+  w5
+  ((x Int)) Int (u5 (h5 x) (v6 x) j5))
+(define-fun
+  f3
+  ((x Int)) Int
+  (- (mod (- (mod (mod (v4 x) (w5 x)) (+ 1 x)) 1) (+ 1 2)) 1))
+(define-fun-rec
+  t3
+  ((x Int)) Int (ite (<= (f3 x) 0) x (t3 (+ x 1))))
+(define-fun-rec
+  u3
+  ((x Int)) Int (ite (<= x 0) (t3 0) (t3 (+ (u3 (- x 1)) 1))))
+(define-fun
+  f2
+  ((x Int)) Int (+ (+ x x) x))
+(define-fun-rec
+  u2
+  ((x Int) (y Int)) Int (ite (<= x 0) y (f2 (u2 (- x 1) y))))
+(define-fun
+  v2
+  ((x Int)) Int (u2 x 1))
+(define-fun
+  f0
+  ((x Int)) Int
+  (- (mod (- (mod (mod (v1 x) (v2 x)) (+ 1 x)) 1) (+ 1 2)) 1))
+(define-fun-rec
+  t0
+  ((x Int)) Int (ite (<= (f0 x) 0) x (t0 (+ x 1))))
+(define-fun-rec
+  u0
+  ((x Int)) Int (ite (<= x 0) (t0 0) (t0 (+ (u0 (- x 1)) 1))))
+(assert-not
+  (forall ((c Int)) (or (not (>= c 0)) (= (u0 c) (u3 c)))))

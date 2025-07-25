@@ -1,0 +1,50 @@
+(declare-sort sk 0)
+(declare-datatype list ((nil) (cons (head sk) (tail list))))
+(declare-datatype Nat ((Z) (S (proj1-S Nat))))
+(define-fun-rec
+  length
+  ((x list)) Nat
+  (match x
+    ((nil Z)
+     ((cons y xs) (S (length xs))))))
+(define-fun-rec
+  +2
+  ((x Nat) (y Nat)) Nat
+  (match x
+    ((Z y)
+     ((S z) (S (+2 z y))))))
+(define-fun-rec
+  ++
+  ((x list) (y list)) list
+  (match x
+    ((nil y)
+     ((cons z xs) (cons z (++ xs y))))))
+(assert-not
+  (forall ((x list) (y list))
+    (= (length (++ x y)) (+2 (length y) (length x)))))
+(assert-claim (= (length nil) Z))
+(assert-claim (forall ((x Nat) (y Nat)) (= (+2 y x) (+2 x y))))
+(assert-claim (forall ((y list)) (= (++ y nil) y)))
+(assert-claim (forall ((y list)) (= (++ nil y) y)))
+(assert-claim (forall ((x Nat)) (= (+2 x Z) x)))
+(assert-claim
+  (forall ((x Nat) (y Nat)) (= (+2 y (S x)) (+2 x (S y)))))
+(assert-claim
+  (forall ((x Nat) (y Nat)) (= (S (+2 x y)) (+2 x (S y)))))
+(assert-claim
+  (forall ((y list) (z list))
+    (= (length (++ z y)) (length (++ y z)))))
+(assert-claim
+  (forall ((y sk) (z list)) (= (length (cons y z)) (S (length z)))))
+(assert-claim
+  (forall ((y list) (z list) (x2 list))
+    (= (++ (++ y z) x2) (++ y (++ z x2)))))
+(assert-claim
+  (forall ((x Nat) (y Nat) (z Nat))
+    (= (+2 (+2 x y) z) (+2 x (+2 y z)))))
+(assert-claim
+  (forall ((y sk) (z list) (x2 list))
+    (= (cons y (++ z x2)) (++ (cons y z) x2))))
+(assert-claim
+  (forall ((y list) (z list))
+    (= (+2 (length y) (length z)) (length (++ y z)))))
