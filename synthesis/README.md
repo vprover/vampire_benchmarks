@@ -1,6 +1,6 @@
 # Synthesis benchmarks
 
-This directory contains benchmarks for total function synthesis using uncomputable symbols. The dataset is under submission to CICM 2025.
+This directory contains benchmarks for total function synthesis using uncomputable symbols. The dataset was published at CICM 2025.
 
 All benchmarks are in $\forall x\exists y. F[x, y]$ format -- i.e., a synthesis problem is encoded as "for all inputs $x$, there exists an output $y$, such that the relation $F$ between $x$ and $y$ holds".
 
