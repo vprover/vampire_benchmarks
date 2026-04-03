@@ -1,0 +1,55 @@
+% BuildPortfolio { branch_cnt: 80, min_timeout_sec: 1, max_timeout_sec: 10, subset: Some(0.5) }
+% random seed: 8524586
+% Vampire(VampireVersion { repo_url: None, commit: "2f00d48dd46abf11b245655b84d51af59fc8b3bd", build_type: Release, z3: true })
+% 2726 solved
+dis+5_13811485:1048576_alasca-s-IsUwaConstraint=off:alasca-s-LogUnifProbabilityOfAllAtoms=off:alasca-s-LogUnifProbabilityOfMaxAtoms=off:alasca-s-TheoryComplexityOfAllAtoms=off:alasca-s-TheoryComplexityOfMaxAtoms=off:alasca-so=on:alascaa=on:alascadb=preordered:alascadf=preordered:anc=all:bd=preordered:doe=on:drc=ordering:fd=preordered:gs=on:ins=1:iul=on:nm=12:rawr=on:rp=on:sas=z3:sos=on:to=lpo:uhcvi=on:urr=full:uwa=alasca_ac:viras=off_30
+% 82 solved
+lrs+5_444419:524288_afr=on:alasca-s-IsUwaConstraint=off:alasca-so=on:alascaa=on:alpa=false:bsr=unit_only:drc=off:fde=unused:iul=on:lrd=on:nm=26:sac=on:sos=on:sp=const_frequency:tgt=ground:to=lpo:uhcvi=on:uwa=alasca_ac:uwa_fpi=on:viras=off_40
+% 23 solved
+lrs+5_2817737:262144_abs=on:alasca-s-IsUwaConstraint=off:alasca-s-LogUnifProbabilityOfAllAtoms=off:alasca-s-LogUnifProbabilityOfMaxAtoms=off:alasca-so=on:alascaa=on:alascadb=preordered:anc=none:bd=preordered:bsr=on:cond=fast:cts=off:drc=off:iul=on:lftc=26:lrd=on:nm=0:nwc=5.0687:rawr=on:rp=on:sac=on:sos=on:spb=goal:tgt=ground:to=lpo:urr=full:uwa=alasca_ac:viras=off_90
+% 9 solved
+lrs+11_2970235:524288_afp=300:afq=1.42507:alasca-so=on:alascaa=on:alascadb=preordered:alascadf=preordered:bd=preordered:doe=on:fd=preordered:fsr=off:ile=on:iul=on:newcnf=on:nm=2:rawr=on:sp=unary_frequency:spb=goal:to=kbo:uhcvi=on:urr=on:uwa=alasca_ac:viras=off_30
+% 7 solved
+dis+1_2891:1048576_alasca-so=on:alascaa=on:alascadf=off:cond=on:doe=on:fd=off:fde=none:flr=on:fsr=off:ins=2:iul=on:rp=on:s2a=on:sac=on:slsq=on:slsqr=23645,65536:sp=const_frequency:to=kbo:uwa=alasca_ac:viras=off_60
+% 7 solved
+lrs+1011_8641:1048576_abs=on:alasca-so=on:alasca-ve-delay=off:alascaa=on:alascadf=preordered:anc=none:avsq=on:avsqr=434801,1048576:bce=on:doe=on:drc=off:fd=preordered:fde=none:fsd=on:fsdmm=3:gsp=on:iul=on:nm=59:nwc=13.9805:sas=z3:sp=const_max:spb=units:tgt=full:to=kbo:uhcvi=on:uwa=alasca_ac:viras=off_20
+% 6 solved
+dis+5_16563:1048576_alasca-s-IsUwaConstraint=inv:alasca-so=on:alascaa=on:alascadb=preordered:alascadf=preordered:av=off:bce=on:bd=preordered:bsr=unit_only:cond=fast:doe=on:fd=preordered:fde=none:iul=on:newcnf=on:nm=27:nwc=8.92917:rawr=on:s2a=on:s2at=6:slsq=on:slsqc=1:slsqr=72449,1048576:sos=all:sp=frequency:tgt=full:to=kbo:uhcvi=on:uwa=alasca_ac:uwa_fpi=on:viras=off_100
+% 3 solved
+dis+1011_5786219:524288_alasca-so=on:alasca-ve-delay=off:alascaa=on:alascadf=preordered:anc=none:avsq=on:avsqr=694399,262144:drc=ordering:fd=preordered:fde=unused:gs=on:gsaa=from_current:gsem=off:iul=on:lcm=reverse:lsd=50:nm=0:rawr=on:sas=z3:sp=reverse_arity:tgt=ground:to=lpo:uwa=alasca_ac:uwa_fpi=on:viras=off_10
+% 4 solved
+lrs+1011_781045:524288_aac=none:abs=on:alasca-so=on:alasca-ve-delay=off:alascaa=on:alascadb=preordered:alascaim=off:bd=preordered:gs=on:iul=on:lftc=22:lrd=on:nm=11:nwc=12.726:rawr=on:sas=z3:to=kbo:urr=on:uwa=alasca_ac:uwa_fpi=on:viras=off_50
+% 2 solved
+lrs+11_80949:1048576_aac=none:add=large:alasca-so=on:alascaa=on:avsq=on:avsqr=3286693,524288:cts=off:drc=off:flr=on:fsd=on:fsdmm=3:fsr=off:iul=on:lrd=on:lwlo=on:nm=37:rawr=on:sas=z3:spb=goal:tgt=ground:to=kbo:uhcvi=on:uwa=alasca_ac:viras=off_40
+% 3 solved
+lrs+5_2555213:524288_afr=on:alasca-s-IsUwaConstraint=off:alasca-so=on:alascaa=on:bs=unit_only:drc=off:ep=RS:ins=1:iul=on:lcm=predicate:lrd=on:nm=23:plsq=on:plsql=on:plsqr=2401255,1048576:rawr=on:sas=z3:sgt=5:sp=frequency:spb=goal_then_units:ss=axioms:st=2:tgt=ground:to=kbo:uwa=alasca_ac:viras=off_60
+% 3 solved
+dis+5_266991:1048576_alasca-s-LogUnifProbabilityOfAllAtoms=off:alasca-s-LogUnifProbabilityOfMaxAtoms=off:alasca-s-TheoryComplexityOfAllAtoms=off:alasca-so=on:alascaa=on:alascadf=preordered:drc=off:erd=off:fd=preordered:ins=1:iul=on:lcm=reverse:lma=on:newcnf=on:nm=7:rawr=on:rp=on:s2agt=50:s2at=3:sas=z3:slsq=on:slsqc=1:slsqr=5753,131072:spb=units:to=kbo:uhcvi=on:uwa=alasca_ac:viras=off_80
+% 2 solved
+dis+11_2673821:524288_alasca-so=on:alascaa=on:alascadb=off:bd=off:bs=unit_only:cts=off:doe=on:drc=off:ep=RST:er=filter:iul=on:mep=off:newcnf=on:nm=4:rawr=on:sgt=10:ss=axioms:to=lpo:uwa=alasca_ac:viras=off_70
+% 2 solved
+dis+11_258967:1048576_aac=none:abs=on:add=large:alasca-so=on:alasca-ve-delay=off:alascaa=on:alascadb=preordered:anc=all_dependent:bce=on:bd=preordered:bs=unit_only:cond=on:doe=on:fde=unused:fsr=off:irw=on:iul=on:nm=3:rawr=on:s2a=on:s2agt=20:sp=frequency:to=kbo:uwa=alasca_ac:viras=off_70
+% 1 solved
+lrs+1011_102455:524288_alasca-so=on:alascaa=on:alascadb=off:alascadf=preordered:bd=off:doe=on:drc=off:fd=preordered:flr=on:gsp=on:iul=on:lma=on:nm=73:rawr=on:rp=on:s2a=on:s2agt=5:s2at=-1:sp=frequency:spb=units:to=kbo:urr=on:uwa=alasca_ac:uwa_fpi=on:viras=off_20
+% 1 solved
+dis+5_5119:524288_add=large:alasca-s-LogUnifProbabilityOfAllAtoms=off:alasca-s-LogUnifProbabilityOfMaxAtoms=off:alasca-s-TheoryComplexityOfAllAtoms=off:alasca-so=on:alascaa=on:alascadb=off:alascadf=off:amm=off:bd=off:cts=off:fd=off:iul=on:lma=on:newcnf=on:nm=13:nwc=7.4667:plsq=on:plsqc=2:plsqr=1037217,1048576:rawr=on:sas=z3:sp=reverse_frequency:to=kbo:uwa=alasca_ac:viras=off_70
+% 2 solved
+dis+11_1191071:1048576_alasca-so=on:alascaa=on:alascadb=off:av=off:bd=off:bsr=unit_only:cts=off:drc=ordering:etr=on:foolp=on:iul=on:nm=25:rawr=on:sgt=50:sos=on:sp=reverse_frequency:ss=axioms:st=3:tgt=full:to=kbo:uwa=alasca_ac:viras=off_80
+% 2 solved
+dis+1011_1_abs=on:afr=on:alasca-so=on:alasca-ve-delay=off:alascaa=on:amm=sco:avsq=on:avsqr=124217,524288:bce=on:bs=unit_only:cond=on:iul=on:nm=5:rawr=on:sas=z3:sp=frequency:spb=goal:ss=included:st=2:tgt=ground:to=kbo:uwa=alasca_ac:uwa_fpi=on:viras=off_80
+% 1 solved
+dis+1011_1293883:1048576_aac=none:add=large:alasca-so=on:alascaa=on:alascadf=preordered:bce=on:fd=preordered:fsd=on:fsdmm=1:fsr=off:iul=on:nm=7:nwc=14.7826:rawr=on:s2a=on:s2agt=15:sas=z3:sos=on:sp=frequency:to=lpo:uhcvi=on:uwa=alasca_ac:viras=off_90
+% 2 solved
+lrs+11_751585:1048576_alasca-so=on:alascaa=on:anc=none:bs=on:bsr=unit_only:doe=on:fde=none:fsd=on:fsr=off:iul=on:nm=11:plsq=on:plsqr=1961133,1048576:rawr=on:s2a=on:s2at=4:sac=on:sas=z3:slsq=on:slsqr=863,1024:sp=reverse_frequency:spb=units:tgt=ground:to=kbo:uwa=alasca_ac:viras=off_90
+% 2 solved
+dis-11_14430277:1048576_alasca-so=on:alascaa=on:alascadb=off:amm=off:avsq=on:avsqc=1:avsqr=711099,524288:bd=off:cond=fast:doe=on:drc=ordering:iul=on:nm=0:rawr=on:rp=on:sas=z3:sos=on:sp=const_frequency:spb=units:tgt=full:to=kbo:uhcvi=on:uwa=alasca_ac:viras=off_60
+% 1 solved
+lrs+1011_1648517:524288_afr=on:alasca-so=on:alasca-ve-delay=off:alascaa=on:alascadf=preordered:bsr=unit_only:cond=on:doe=on:drc=off:fd=preordered:fde=none:iul=on:lftc=23:lsd=1:newcnf=on:nm=28:rawr=on:sac=on:sd=1:sp=occurrence:spb=units:ss=axioms:st=-1:to=kbo:uhcvi=on:uwa=alasca_ac:viras=off_70
+% 1 solved
+dis+1011_48113:262144_alasca-so=on:alasca-ve-delay=off:alascaa=on:alascadb=preordered:amm=off:bd=preordered:ep=R:fde=none:fsr=off:gs=on:gsem=off:iul=on:nm=9:nwc=8.33046:sp=const_frequency:spb=intro:tgt=full:to=lpo:uwa=alasca_ac:viras=off_30
+% 2 solved
+lrs+1011_13569:524288_aac=none:add=large:alasca-so=on:alasca-ve-delay=off:alascaa=on:bs=on:doe=on:drc=ordering:erd=off:ile=on:iul=on:lftc=39:lrd=on:lsd=20:newcnf=on:nm=0:nwc=3.6027:rawr=on:s2a=on:sp=occurrence:spb=units:tgt=full:to=kbo:urr=ec_only:uwa=alasca_ac:viras=off_70
+% 1 solved
+ott+5_3084765:1048576_alasca-s-IsUwaConstraint=off:alasca-s-LogUnifProbabilityOfAllAtoms=off:alasca-s-LogUnifProbabilityOfMaxAtoms=off:alasca-s-TheoryComplexityOfAllAtoms=off:alasca-s-TheoryComplexityOfMaxAtoms=off:alasca-so=on:alasca-ve-delay=off:alascaa=on:alascadb=preordered:bd=preordered:bsr=unit_only:doe=on:drc=off:foolp=on:fsd=on:fsdmm=1:iul=on:nm=6:plsq=on:plsqr=567753,524288:rawr=on:sp=frequency:tgt=ground:to=lpo:uhcvi=on:uwa=alasca_ac:viras=off_50
+% 1 solved
+ott+1011_15184191:1048576_alasca-so=on:alascaa=on:bs=unit_only:cond=on:doe=on:drc=off:fde=unused:flr=on:iul=on:nm=6:nwc=6.5726:rawr=on:s2a=on:s2at=6:sp=frequency:tgt=full:to=kbo:uwa=alasca_ac:viras=off_100
