@@ -14,5 +14,7 @@ In the paper [1] vampire is run in two different configurations on these benchma
 
 
 [1]: Konstantin Korovin, Laura Kovács, Johannes Schoisswohl, Andrei Voronkov: Enhancing Superposition Reasoning in Linear Real Arithmetic through Selection and Simplification. Under Submission
+
 [2]: Konstantin Korovin, Laura Kovács, Giles Reger, Johannes Schoisswohl, Andrei Voronkov: ALASCA: Reasoning in Quantified Linear Arithmetic. TACAS (1) 2023: 647-665
+
 [3]: Martin Desharnais, Petar Vukmirovic, Jasmin Blanchette, Makarius Wenzel: Seventeen Provers Under the Hammer. ITP 2022: 8:1-8:18
