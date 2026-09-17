@@ -1,0 +1,53 @@
+
+(set-logic UFLRA)
+
+(declare-fun f (Real Real) Real)
+(declare-fun g (Real Real) Real)
+(declare-fun h (Real) Real)
+
+(declare-const a1 Real)
+(declare-const a2 Real)
+(declare-const a3 Real)
+(declare-const a4 Real)
+(declare-const a5 Real)
+(declare-const a6 Real)
+(declare-const a7 Real)
+(declare-const a8 Real)
+(declare-const a9 Real)
+(declare-const a10 Real)
+
+(assert (forall ((x Real) (y Real)) (= (+ (g x y) x (- y)) 0.0) ))
+
+(assert (forall ((y Real)
+    (x1 Real)
+    (x2 Real)
+    (x3 Real)
+    (x4 Real)
+    (x5 Real)
+    (x6 Real)
+    (x7 Real)
+    (x8 Real)
+    (x9 Real)
+    (x10 Real)
+  ) (or
+    (> (+ (- (f x1 a1)) (g y x1)) 0.0)
+    (> (+ (- (f x2 a2)) (g y x2)) 0.0)
+    (> (+ (- (f x3 a3)) (g y x3)) 0.0)
+    (> (+ (- (f x4 a4)) (g y x4)) 0.0)
+    (> (+ (- (f x5 a5)) (g y x5)) 0.0)
+    (> (+ (- (f x6 a6)) (g y x6)) 0.0)
+    (> (+ (- (f x7 a7)) (g y x7)) 0.0)
+    (> (+ (- (f x8 a8)) (g y x8)) 0.0)
+    (> (+ (- (f x9 a9)) (g y x9)) 0.0)
+    (> (+ (- (f x10 a10)) (g y x10)) 0.0)
+    (> y 0.0)
+)))
+
+(assert (forall ((x Real) (y Real)) (or
+  (> (+ (f x y) (- y)) 0.0)
+  (= (+ (- (f x y)) y) 0.0)
+  (not (= (+ (- (h x)) (h y)) 0.0))
+)))
+
+(check-sat)
+

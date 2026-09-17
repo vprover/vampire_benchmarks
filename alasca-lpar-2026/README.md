@@ -1,7 +1,8 @@
 # ALASCA Selection & Simplification Benchmarks (LPAR26)
 
 This directory contains benchmarks used in the paper [1], currently under submission in LPAR26.
-The benchmark set is the same as the one used in [2], and contains some parts of SMT-LIB (LRA, NRA, and UFLRA), the benchmark set SH from [3], as well as the benchmark sets limit and triangular that were created for [2].
+The benchmark set is the same as the one used in [2], and contains some parts of SMT-LIB (`LRA`, `NRA`, and `UFLRA`), the benchmark set `SH` from [3], as well as the benchmark sets `limit` and `triangular` that were created for [2].
+The benchmarks representing the motivating example of Section 2 of [1] can be found in the directory `motivating-example`.
 
 In the paper [1] vampire is run in two different configurations on these benchmarks:
 
